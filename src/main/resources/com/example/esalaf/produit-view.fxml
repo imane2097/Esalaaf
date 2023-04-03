@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esalaf.ProduitController" style="-fx-background-color: #f7f7f7; -fx-font-family: Arial, sans-serif;">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <VBox style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-border-color: #cccccc; -fx-border-width: 2px; -fx-border-radius: 10px;">
+        <Label text="Nom:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="nom" style="-fx-font-size: 14px; -fx-background-color: #f2f2f2; -fx-border-radius: 5px; -fx-padding: 5px;" />
+
+        <Label text="Description:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="description" style="-fx-font-size: 14px; -fx-background-color: #f2f2f2; -fx-border-radius: 5px; -fx-padding: 5px;" />
+
+        <Label text="Prix:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="prix" style="-fx-font-size: 14px; -fx-background-color: #f2f2f2; -fx-border-radius: 5px; -fx-padding: 5px;" />
+
+        <Label text="Stock:" style="-fx-font-size: 14px;" />
+        <TextField fx:id="stock" style="-fx-font-size: 14px; -fx-background-color: #f2f2f2; -fx-border-radius: 5px; -fx-padding: 5px;" />
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ffffff; -fx-padding: 10px;">
+        <Button onAction="#onSaveButtonClick" text="Enregistrer" fx:id="ok" style="-fx-background-color: #F08080; -fx-text-fill: #000000; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+        <Button onAction="#onUpdateButtonClick" text="Mettre à jour" fx:id="o" style="-fx-background-color: #FFC0CB; -fx-text-fill: #000000; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+        <Button onAction="#onDeleteButtonClick" text="Supprimer" fx:id="k" style="-fx-background-color:#DB7093; -fx-text-fill: #000000; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+        <Button onAction="#onGetOneButtonClick" text="Obtenir" fx:id="r" style="-fx-background-color: #E9967A; -fx-text-fill: #000000; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+        <Button onAction="#onClearInput" text="Clear" fx:id="c" style="-fx-background-color: #D8BFD8; -fx-text-fill: #000000; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+    </HBox>
+    <ScrollPane fitToWidth="true">
+        <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #FCE4EC; -fx-padding: 20px;">
+            <Label text="Liste des produits" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFB4;"/>
+            <TableView fx:id="mytab" style="-fx-background-color: #fff; -fx-border-color: #FF69B4; -fx-border-width: 3px;" prefWidth="1000" minHeight="400">
+                <columns>
+                    <TableColumn prefWidth="100.0" text="ID" fx:id="col_id" style="-fx-alignment: CENTER; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #000000;" />
+                    <TableColumn prefWidth="150.0" text="Nom" fx:id="col_nom" style="-fx-alignment: CENTER; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #000000;" />
+                    <TableColumn prefWidth="250.0" text="Description" fx:id="col_description" style="-fx-alignment: CENTER; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #000000;" />
+                    <TableColumn prefWidth="100.0" text="Prix" fx:id="col_prix" style="-fx-alignment: CENTER; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #000000;" />
+                    <TableColumn prefWidth="100.0" text="Stock" fx:id="col_stock" style="-fx-alignment: CENTER; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #000000;" />
+                </columns>
+            </TableView>
+        </VBox>
+    </ScrollPane>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button onAction="#onViewCreditsButtonClick" text="Voir les crédits" fx:id="viewCreditsBtn" style="-fx-background-color: #DD968F; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-weight: bold;"></Button>
+        <Button onAction="#onViewClientsButtonClick" text="Voir les clients" fx:id="viewClientsBtn" style="-fx-background-color: #D08080; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-weight: bold;"></Button>
+        <Button onAction="#onViewCommandesButtonClick" fx:id="viewCommandesBtn" text="Voir les commandes" style="-fx-background-color: #DF7080; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-weight: bold;" ></Button>
+    </HBox>
+</VBox>
